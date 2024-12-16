@@ -21,7 +21,12 @@
       {
         "name": "next"
       }
-    ]
+
+      ],
+    "baseUrl" : ".",          // Configura la base del proyecto
+    "paths": {
+      "@/*": ["src/*"]       // Alias '@' apuntando a la carpeta 'src'
+    }
   },
   "include": [
     "next-env.d.ts",
