@@ -88,6 +88,9 @@ export const authOptions = {
         },
 
         async jwt({ token, user, account }) {
+            console.log("JWT Callback - user:", user);
+            console.log("JWT Callback - token:", token);
+
             // Para Google
             if (account?.provider === "google" && user) {
                 token.id = user.id;
@@ -108,11 +111,15 @@ export const authOptions = {
         },
 
         async session({ session, token }) {
+            console.log("Session Callback - token:", token);
+            console.log("Session Callback - session antes:", session);
+
             session.user.id = token.id ?? null;
             session.user.name = token.name ?? null;
             session.user.email = token.email ?? null;
             session.user.balance = token.balance ?? 0;
             session.user.backendToken = token.backendToken ?? null;
+            console.log("Session Callback - session después:", session);
             session.user.googleAccessToken = token.accessToken ?? null; // opcional
             return session;
         },
