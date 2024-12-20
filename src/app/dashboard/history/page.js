@@ -22,7 +22,7 @@ export default function History() {
         const fetchHistory = async () => {
             try {
                 const token = session.user?.backendToken;
-                const res = await fetch("http://localhost:5000/api/account/transactions", {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/account/transactions`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

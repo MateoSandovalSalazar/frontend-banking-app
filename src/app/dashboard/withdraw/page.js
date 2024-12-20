@@ -30,7 +30,8 @@ export default function Withdraw() {
                 return;
             }
 
-            const res = await fetch("http://localhost:5000/api/account/withdraw", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/account/withdraw`
+            , {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

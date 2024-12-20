@@ -31,7 +31,8 @@ export default function Deposit() {
                 return;
             }
 
-            const res = await fetch("http://localhost:5000/api/account/deposit", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/account/deposit`
+            , {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

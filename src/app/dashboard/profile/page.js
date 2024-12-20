@@ -25,7 +25,7 @@ export default function Profile() {
         const fetchProfile = async () => {
             try {
                 const token = session.user?.backendToken;
-                const res = await fetch("http://localhost:5000/api/auth/me", {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/account/profile`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 const data = await res.json();
