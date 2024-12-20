@@ -24,7 +24,7 @@ export default function Transfer() {
         try {
             const token = session.user?.backendToken;
             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/account/transfer`
-            ", {
+            , {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
